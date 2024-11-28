@@ -19,7 +19,7 @@ function Product() {
   return (
     <section className={Classes.product_container}>
       {Products.map((singleProduct) => {
-        return <ProductCard Product={singleProduct} key={singleProduct.id} />;
+        return <ProductCard product={singleProduct} key={singleProduct.id} />;
       })}
     </section>
   );

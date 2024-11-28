@@ -3,8 +3,8 @@ import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../Currencyformat.jsx/Currencyformat";
 import Classes from "./Product.module.css";
 
-function ProductCard({ Product }) {
-  const { image, title, id, price, rating } = Product;
+function ProductCard({ product }) {
+  const { image, title, id, price, rating } = product;
 
   return (
     <div className={Classes.card_container}>

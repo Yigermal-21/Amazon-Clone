@@ -4,7 +4,10 @@ import React from 'react'
 // import CarouselEffect from './Components/Carousael/CarouselEffect';
 // import Category from "./Components/Category/Category";
 // import Product from "./Components/Product/Product";
-import Routing from './Router'
+
+import Routing from './Routing';
+
+
 
 
 
@@ -12,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Routing />
+        <Routing />
     </>
   );
 }

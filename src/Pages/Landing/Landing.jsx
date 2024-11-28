@@ -7,7 +7,7 @@ import Layout from "../../Layout/Layout";
 function Landing() {
   return (
     <Layout>
-      <CarouselEffect />
+      <CarouselEffect/>
       <Category />
       <Product />
     </Layout>
