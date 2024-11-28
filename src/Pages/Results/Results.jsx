@@ -15,8 +15,8 @@ function Results() {
     axios
       .get(`${producturl}/products/category/${categoryName}`)
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
+        // console.log(res.data);
         setResults(res.data);
       })
       .catch((err) => {
