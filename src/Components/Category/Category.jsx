@@ -1,5 +1,5 @@
 import CategoryCard from "./CategoryCard";
-import { CategoryInfo } from "./CategoryInfo";
+import { CategoryInfo } from './Categoryinfo'
 import Classes from "./Category.module.css";
 
 function Category() {
