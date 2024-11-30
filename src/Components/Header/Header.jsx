@@ -72,3 +72,74 @@ function Header() {
 }
 
 export default Header;
+
+// function Header() {
+//   return (
+//     <>
+//       <section className={classes.header_container}>
+//         <div className={classes.Logo_container}>
+//           {/* Logo */}
+//           <Link to="/">
+//             <img
+//               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+//               alt="Amazon Logo"
+//             />
+//           </Link>
+//           {/* Delivery */}
+//           <div className={classes.delivery}>
+//             <p style={{ display: "flex", alignItems: "center" }}>
+//               <FaLocationPin style={{ marginRight: "8px" }} />
+//               Delivered to
+//             </p>
+//             <span>Ethiopia</span>
+//           </div>
+//         </div>
+
+//         <div className={classes.search}>
+//           {/* Searchbar */}
+//           <select className={classes.dropdown}>
+//             <option value="all">All</option>
+//           </select>
+//           <input type="text" placeholder="Search Product" />
+//           <FaSearch />
+//         </div>
+
+//         {/* Other Section */}
+//         <div className={classes.order_container}>
+//           <Link to="/" className={classes.language}>
+//             <img
+//               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_7U1SDrs-cCQsOEZY3fH1tZcjoIVuQDKJg&s"
+//               alt="Language Selector"
+//             />
+//             <select>
+//               <option value="EN">EN</option>
+//             </select>
+//           </Link>
+
+//           {/* Account & Orders */}
+//           <Link to="/account">
+//             <p>Sign In</p>
+//             <span>Account & Lists</span>
+//           </Link>
+
+//           {/* Orders */}
+//           <Link to="/orders">
+//             <p>Returns</p>
+//             <span>& Orders</span>
+//           </Link>
+
+//           {/* Cart */}
+//           <Link to="/cart" className={classes.cart}>
+//             <BiCart size={35} />
+//             <span>0</span>
+//           </Link>
+//         </div>
+//       </section>
+
+//       {/* Lowerheader */}
+//       <Lowerheader />
+//     </>
+//   );
+// }
+
+// export default Header;

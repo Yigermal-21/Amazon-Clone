@@ -28,11 +28,16 @@ useEffect(() => {
     });
 }, []);
     // productid;
-  return (
-    <Layout>
-      {isLoading ? <Loader /> : <ProductCard product={product} />}
-    </Layout>
-  ); 
+
+ return (
+  <Layout>
+    {isLoading ? (
+      <Loader />
+    ) : (
+      <ProductCard product={product} flex={true} renderDesc ={true}/>
+    )}
+  </Layout>
+);
 }
 
 export default ProductDetail;
