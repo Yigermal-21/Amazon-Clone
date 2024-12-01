@@ -64,12 +64,12 @@
     padding:20px 0;
 }
 .product_flexed .button{
-    display:block;
-    position:static;
-    width:150px;
-    margin-right:40px;
-    background-color: orange;
-}
+        display:block;
+        width:150px;
+        position:static;
+        margin-right:40px;
+    }
+
 .product_flexed {
     height:50vh;
 }

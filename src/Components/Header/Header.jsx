@@ -1,72 +1,79 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./header.module.css";
 import {Link}from 'react-router-dom'
 import { FaSearch } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
 import { FaLocationPin } from "react-icons/fa6";
 import Lowerheader from "./Lowerheader";
+import { DataContext } from "../DataProvider/DataProvider";
+// import { reducer } from "../../Utility/Reducer";
 
 function Header() {
+  const {state, dispatch} = useContext(DataContext);
+
+  // console.log(state.basket);
   return (
     <>
-      <section className={classes.header_container}>
-        <div className={classes.Logo_container}>
-          {/* {Logo} */}
-          <Link to ="/">
-            <img
-              src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-              alt="amazon logo"
-            />
-          </Link>
-          {/* Delivery */}
+      <section className={classes.fixed}>
+        <section className={classes.header_container}>
+          <div className={classes.Logo_container}>
+            {/* {Logo} */}
+            <Link to="/">
+              <img
+                src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                alt="amazon logo"
+              />
+            </Link>
+            {/* Delivery */}
 
-          <div className={classes.delivery}>
-            <p style={{ display: "flex", alignItems: "center" }}>
-              <FaLocationPin style={{ marginRight: "8px" }} />
-              Delivered to
-            </p>
-            <span>Ethiopia</span>
+            <div className={classes.delivery}>
+              <p style={{ display: "flex", alignItems: "center" }}>
+                <FaLocationPin style={{ marginRight: "8px" }} />
+                Delivered to
+              </p>
+              <span>Ethiopia</span>
+            </div>
           </div>
-        </div>
-        <div className={classes.search}>
-          {/* serachbar */}
-          <select name="" id="" className="name">
-            <option value="" className="value">
-              All
-            </option>
-          </select>
-          <input type="text" name="" id="" placeholder="Search Product" />
-          {<FaSearch />}
-        </div>
-        {/* othersection */}
-        <div className={classes.order_container}>
-          <Link to="" className={classes.language}>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_7U1SDrs-cCQsOEZY3fH1tZcjoIVuQDKJg&s"
-              alt=""
-            />
-            <select name="" id="">
-              <option value="">EN</option>
+          <div className={classes.search}>
+            {/* serachbar */}
+            <select name="" id="" className="name">
+              <option value="" className="value">
+                All
+              </option>
             </select>
-          </Link>
+            <input type="text" name="" id="" placeholder="Search Product" />
+            {<FaSearch />}
+          </div>
+          {/* othersection */}
+          <div className={classes.order_container}>
+            <Link to="" className={classes.language}>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_7U1SDrs-cCQsOEZY3fH1tZcjoIVuQDKJg&s"
+                alt=""
+              />
+              <select name="" id="">
+                <option value="">EN</option>
+              </select>
+            </Link>
 
-          {/* threecomponents */}
-          <Link to="">
-            <p>Sign In</p>
-            <span>Account & Lists</span>
-          </Link >
-          {/* orders */}
-          <Link to="/Orders">
-            <p>returns</p>
-            <span>&Orders</span>
-          </Link>
-          <Link to ="/Cart" className={classes.cart}>
-            {<BiCart size={35} />}
-            <span>0</span>
-          </Link>
-        </div>
+            {/* threecomponents */}
+            <Link to="">
+              <p>Sign In</p>
+              <span>Account & Lists</span>
+            </Link>
+            {/* orders */}
+            <Link to="/Orders">
+              <p>returns</p>
+              <span>&Orders</span>
+            </Link>
+            <Link to="/Cart" className={classes.cart}>
+              {<BiCart size={35} />}
+              <span>{state.basket.length}</span>
+            </Link>
+          </div>
+        </section>
+        <Lowerheader />
       </section>
-      <Lowerheader />
     </>
   );
 }

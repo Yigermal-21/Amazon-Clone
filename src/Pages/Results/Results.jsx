@@ -39,7 +39,8 @@ function Results() {
             
             <ProductCard
               key={Product.id}
-              product={Product} // Passing product as a prop to ProductCard
+              product={Product}
+              renderAdd={true}
             />
           ))}
         </div>)
