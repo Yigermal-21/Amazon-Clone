@@ -1,5 +1,5 @@
 import React from "react";
-import Classes from "./Orders.module.css";
+import Classes from './orders.module.css'
 import Layout from "../../Layout/Layout";
 
 function Orders() {

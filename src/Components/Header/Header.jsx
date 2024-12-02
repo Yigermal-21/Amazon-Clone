@@ -13,7 +13,7 @@ function Header() {
   const totalItem = state.basket?.reduce((amount,item)=>{
     return item.amount + amount
   },0)
-  console.log(totalItem)
+  // console.log(totalItem)
 
   // console.log(state.basket);
   return (
