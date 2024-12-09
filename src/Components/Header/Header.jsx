@@ -6,14 +6,19 @@ import { BiCart } from "react-icons/bi";
 import { FaLocationPin } from "react-icons/fa6";
 import Lowerheader from "./Lowerheader";
 import { DataContext } from "../DataProvider/DataProvider";
+import {auth} from '../../Utility/Firebase'
 // import { reducer } from "../../Utility/Reducer";
 
 function Header() {
-  const {state, dispatch} = useContext(DataContext);
-  const totalItem = state.basket?.reduce((amount,item)=>{
-    return item.amount + amount
-  },0)
+  const { state, dispatch} = useContext(DataContext);
+  const { user } = state; 
+  // console.log(user);
+
+  const totalItem = state.basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
   // console.log(totalItem)
+  // console.log(state.user);
 
   // console.log(state.basket);
   return (
@@ -41,12 +46,10 @@ function Header() {
           <div className={classes.search}>
             {/* serachbar */}
             <select name="" id="" className="name">
-              <option value="" className="value">
-                All
-              </option>
+              <option value="">All</option>
             </select>
             <input type="text" name="" id="" placeholder="Search Product" />
-            {<FaSearch />}
+            <FaSearch size={36} />
           </div>
           {/* othersection */}
           <div className={classes.order_container}>
@@ -61,9 +64,20 @@ function Header() {
             </Link>
 
             {/* threecomponents */}
-            <Link to="">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]}</p>
+                    <span onClick={()=>auth.signOut()}>Sign Out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             {/* orders */}
             <Link to="/Orders">

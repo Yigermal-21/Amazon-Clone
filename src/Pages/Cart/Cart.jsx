@@ -18,6 +18,7 @@ function Cart() {
  const total = basket.reduce((amount, item) => {
    return item.price * item.amount + amount;
  }, 0);
+ 
  const increment =(item)=>{
   dispatch({
     type:Type.ADD_TO_BASKET,
@@ -42,11 +43,12 @@ function Cart() {
           {basket.length === 0 ? (
             <p>Oops! No items in your cart</p>
           ) : (
-            basket.map((item, i) => {
+            basket.map((item) => {
               return (
-                <section className={Calsses.cart_product}>
+                <section key={item.id} className={Calsses.cart_product}>
                   <ProductCard
-                    key={i}
+                    // key={item.id}
+                    // key={i}
                     product={item}
                     renderDesc={true}
                     renderAdd={false}
@@ -57,14 +59,14 @@ function Cart() {
                       className={Calsses.btn}
                       onClick={() => increment(item)}
                     >
-                      <IoIosArrowUp size ={30} />
+                      <IoIosArrowUp size={30} />
                     </button>
                     <span>{item.amount}</span>
                     <button
                       className={Calsses.btn}
                       onClick={() => decrement(item.id)}
                     >
-                      <IoIosArrowDown size={30}/>
+                      <IoIosArrowDown size={30} />
                     </button>
                   </div>
                 </section>

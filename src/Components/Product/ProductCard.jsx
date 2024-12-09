@@ -16,7 +16,7 @@ function ProductCard({ product, flex, renderDesc,renderAdd }) {
 
   const addToCart =() =>{
     const item = { image, title, id, price, rating, description };
-    console.log("Dispatching item:", item);
+    // console.log("Dispatching item:", item);
     dispatch({
     type:Type.ADD_TO_BASKET,
     item:item,
